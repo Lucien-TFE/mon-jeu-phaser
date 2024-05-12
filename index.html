@@ -49,8 +49,6 @@
 <body>
 <button id="startGameButton" class="button">Démarrer le jeu</button>
 <div id="game-container" style="flex: 1; display: none; justify-content: center; align-items: center;">
-    <!-- Le reste de votre contenu de jeu ici -->
-<div id="game-container" style="flex: 1; display: flex; justify-content: center; align-items: center;">
     <div id="end-popup">
         <p id="final-score" style="font-size: 20px; font-weight: bold;">Score: 0</p>
         <div>
@@ -60,7 +58,6 @@
         <p id="best-score" style="font-size: 18px;">bestScore : 0</p>
         <p id="record-message" style="color: red; font-size: 16px;"></p>
     </div>
-</div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/phaser@3/dist/phaser.min.js"></script>
@@ -99,15 +96,15 @@
     var gameOver = false;  // Ajout de la variable gameOver
 
     document.getElementById('startGameButton').addEventListener('click', function() {
-    document.getElementById('game-container').style.display = 'flex'; // Rendre le conteneur du jeu visible
-    startGame(); // Fonction pour initialiser le jeu
-});
+        document.getElementById('game-container').style.display = 'flex'; // Rendre le conteneur du jeu visible
+        startGame(); // Fonction pour initialiser le jeu
+    });
 
-function startGame() {
-    if (!game.isRunning) {
-        game = new Phaser.Game(config); // Assurez-vous que cette ligne ne crée pas de nouvelles instances à chaque fois
+    function startGame() {
+        if (!game.isRunning) {
+            game = new Phaser.Game(config); // Assurez-vous que cette ligne ne crée pas de nouvelles instances à chaque fois
+        }
     }
-}
 
     function preload() {
         this.load.image('sky', 'assets/sky.jpg');
@@ -120,7 +117,7 @@ function startGame() {
         this.add.image(this.cameras.main.centerX, this.cameras.main.centerY, 'sky').setDisplaySize(this.cameras.main.width, this.cameras.main.height);
 
         casier = this.physics.add.sprite(this.cameras.main.centerX, this.cameras.main.height - 50, 'casier').setScale(0.035);
-        casier.setCollideWorldBounds(true);
+        casier.setCollide WorldBounds(true);
 
         cursors = this.input.keyboard.createCursorKeys();
 
