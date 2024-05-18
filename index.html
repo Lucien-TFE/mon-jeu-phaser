@@ -270,7 +270,7 @@ function startGame() {
     document.getElementById('restart-button').addEventListener('click', restartGame);
 
     document.getElementById('share-button').addEventListener('click', function() {
-        var url = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(location.href) + '&t=' + encodeURIComponent('I scored ' + score + ' in Bière Collector!');
+        var url = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('https://www.laderen.be/jeu-concours') + '&t=' + encodeURIComponent('I scored ' + score + ' in Bière Collector!');
         window.open(url, '_blank');
     });
 
